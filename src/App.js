@@ -17,15 +17,29 @@ export default class App extends React.Component {
   };
 
   decrementCount = () => {
-    if (this.state.counter <= 0) {
-      this.setState({
-        counter: 0,
-      });
-    } else {
-      this.setState({
-        counter: this.state.counter - 1,
-      });
-    }
+    // if (this.state.counter <= 0) {
+    //   this.setState({
+    //     counter: 0,
+    //   });
+    // } else {
+    //   this.setState({
+    //     counter: this.state.counter - 1,
+    //   });
+    // }
+
+    // if (this.state.counter > 0) {
+    //   this.setState((prevState) => ({ counter: prevState.counter - 1 }));
+    // }
+
+    this.setState((prevState) => ({
+      counter: prevState.counter ? prevState.counter - 1 : 0,
+    }));
+  };
+
+  decrementCount = () => {
+    this.setState((prevState) => ({
+      counter: prevState.counter ? prevState.counter - 1 : 0,
+    }));
   };
 
   render() {
